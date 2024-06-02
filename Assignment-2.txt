@@ -1,0 +1,15 @@
+For this second assignment, My solution will go as below
+
+Choice of cloud Provider: Given the flexibility to choose the hosting provider, I would select one that offers strong support for Kubernetes, which is GKE as kubernetes was developed by google and all the functionalities wrt GKE is mooth as comaprable to its counteraparts AKS/EKS and  Additionally, GKE provides built-in support for Kubernetes features like Horizontal Pod Autoscaling, Node Auto-provisioning, and integrated authentication with Google Cloud IAM.
+
+Exposing Web app to the Internet: To expose the web app on the internet, I would prefer a combination of Kubernetes Ingress controllers and a load balancer service provided by the GCP. The Ingress controller acts as a reverse proxy, routing incoming traffic to the appropriate services based on defined rules, while the load balancer ensures high availability and scalability by distributing incoming requests across multiple pods.
+
+Notification of Connectivity Issues: Implementing monitoring and alerting solutions such as Prometheus and Grafana would allow us to monitor the health and connectivity of the web services. i would set up visibility wrt app/infra for the applications integrated and there would be special mention to the dashboards as in error count/error rate/pod health/cluster health etc.
+
+Automated Code merge to envs(stage/dev/prod): For automated code merger/deployment, i will go for jenkins and integrate it with the app SCM(github).i would be writing multi stage pipeline scripts using groovy to have steps starting from code cloning to deploying to the envs(stage/dev/prod) and will use shared libraries like env and other modules and will call them in the Jenkinsfile as best practice.Once the Devs  commit the code changes to the app repo,jenkins will automatically detect the change via webhook integration ebtween jenkins and github and will trigger the pipeline to automatically build, test, and deploy the changes to the Kubernetes cluster as per the pipeline script(Jenkinsfile).
+
+VPN Gateway: 
+1.i would setup a VPN gateway in GCP to establish a secure connection between the Kubernetes cluster and the internal-assets virtual network. This ensures encrypted communication and isolation from the public internet.
+2.next i would go for VPC peering connection between the Kubernetes cluster's VPC and the internal-assets virtual network.
+3. post to this i will Implement Kubernetes Network Policies to restrict traffic within the cluster, allowing only necessary communication between web services and internal systems. This helps prevent unauthorized access and reduces the attack surface.
+4.i would Utilize Kubernetes Service Accounts and RBAC to manage access control within the cluster. Define roles and permissions to restrict access to resources based on the principle of least privilege, ensuring only authorized entities can interact with internal systems.

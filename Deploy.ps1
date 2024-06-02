@@ -1,14 +1,15 @@
-dotnet test ./super-service/tests
+Write-Output "Running automated tests..."
+dotnet test ./tests/super-service.Tests/super-service.Tests.csproj
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Tests failed. Aborting deployment."
+    exit $LASTEXITCODE
+}
 
-dotnet publish ./super-service/src/SuperService.Api -c Release -o ./super-service/artifacts
+$dockerImageName = "super-service:latest"
+Write-Output "Building Docker image..."
+docker build -t $dockerImageName .
 
-docker build -t super-service ./super-service/src/SuperService.Api
+Write-Output "Running Docker container locally..."
+docker run -d -p 8080:80 --name super-service $dockerImageName
 
-docker run -d -p 8080:80 --name super-service super-service
-
-docker tag super-service dockerbabuli/super-service
-docker push dockerbabuli/super-service
-
-docker stop super-service
-docker rm super-service
-docker rmi super-service
+Write-Output "Deployment done. The application is running at http://localhost:8080"

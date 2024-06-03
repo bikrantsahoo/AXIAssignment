@@ -1,5 +1,4 @@
-Assignment -1 Steps for running the app locally:
-
+                                     Automation Of Deployment via docker and shell
 Step 1: Run Automated Tests
 To run the automated tests, we use the dotnet test command.
 

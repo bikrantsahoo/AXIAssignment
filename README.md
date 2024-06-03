@@ -14,5 +14,6 @@ Directory Structure will look like below:
 
 Step5:
 Create a Dockerfile in the root directory (super-service):
+
 Step6:
 run the script by cmd  ./Deploy.ps1. voilaaaaa. app is running. if not fallback to the above steps.

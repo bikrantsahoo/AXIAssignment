@@ -1,4 +1,4 @@
-                                     Automation Of Deployment via Docker and Powershell Script
+                            Automation Of Deployment via Docker and Powershell Script
 Step 1: Run Automated Tests
 To run the automated tests, we use the dotnet test command.
 

@@ -9,20 +9,9 @@ Step 3: Deploy and Run the Image Locally or in a Public Cloud
 We will use Docker commands to run the image locally. For cloud deployment, further steps involving Kubernetes (for GKE).
 
 Directory Structure will look like below:
-super-service/
-|-- src/
-|   |-- super-service/
-|       |-- Controllers/
-|       |-- Models/
-|       |-- Program.cs
-|       |-- Startup.cs
-|       |-- super-service.csproj
-|-- tests/
-|   |-- super-service.Tests/
-|       |-- super-service.Tests.csproj
-|       |-- UnitTest1.cs
-|-- Deploy.ps1
-|-- Dockerfile
+
+<img width="360" alt="Screenshot 2024-06-03 at 5 55 18 AM" src="https://github.com/bikrantsahoo/AXIAssignment/assets/90495596/71d4c718-00e1-4aaf-bfb6-490ff6fddc32">
+
 
 step5:
 Create a Dockerfile in the root directory (super-service):
